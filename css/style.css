@@ -1,0 +1,297 @@
+:root {
+  --primary: #6366f1;
+  --gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.3);
+
+  --dark-bg: #0d0d0d;
+  --dark-card-bg: rgba(255, 255, 255, 0.05);
+  --dark-border: rgba(255, 255, 255, 0.1);
+  --dark-text: #e2e2e2;
+  --dark-link: #9ca3af;
+  --dark-btn-bg: #1f1f1f;
+  --dark-hover: #6366f1;
+}
+
+/* Body */
+body {
+  font-family: Inter, sans-serif;
+  background: #f5f5f7;
+  color: #111;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* HERO */
+header {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #fafafa, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 span{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.dark-mode header {
+  background: linear-gradient(135deg, #111 0%, #585757 100%);
+  color: var(--dark-text);
+}
+
+.img-hover {
+  transition: transform 0.4s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.08);
+}
+
+/* Hero image overlay in dark mode */
+.dark-mode header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  border-radius: 0 0 50% 50% / 0 0 10% 10%;
+
+
+}
+
+/* Buttons */
+.btn-gradient {
+  background: var(--gradient);
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-gradient:hover {
+  opacity: 0.85;
+  transform: translateY(-3px);
+}
+
+/* Glass Cards */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Project Images Overlay */
+.project-img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+/* Skills Logos */
+.skill-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin: 0 4px;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background: var(--dark-bg) !important;
+  color: var(--dark-text);
+}
+
+.dark-mode a {
+  color: var(--dark-link);
+}
+
+.dark-mode a:hover {
+  color: #fff;
+}
+
+/* Navbar dark mode */
+.dark-mode .navbar {
+  background: rgba(20, 20, 20, 0.9) !important;
+}
+
+/* Hero profile image normal in dark mode */
+header .img-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Buttons dark mode */
+.dark-mode .btn-outline-dark {
+  border-color: #e2e2e2;
+  color: #e2e2e2;
+}
+
+.dark-mode .btn-outline-dark:hover {
+  background-color: var(--dark-hover);
+  color: #fff;
+}
+
+/* Glass cards in dark mode */
+.dark-mode .glass-card {
+  background: var(--dark-card-bg);
+  border-color: var(--dark-border);
+}
+
+/* About section Contact card – dark mode */
+.dark-mode .glass-card .card-title,
+.dark-mode .glass-card .card-text,
+.dark-mode .glass-card p,
+.dark-mode .glass-card i {
+  color: #e5e5e5 !important;
+}
+
+/* Links inside card */
+.dark-mode .glass-card a {
+  color: #e5e5e5 !important;
+}
+
+.dark-mode .glass-card a:hover {
+  color: var(--primary) !important;
+}
+
+/* Remove forced text-dark inside dark mode */
+.dark-mode .glass-card a.text-dark {
+  color: #e5e5e5 !important;
+}
+
+/* Project card buttons */
+.dark-mode .btn-outline-primary {
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.dark-mode .btn-outline-primary:hover {
+  background-color: #6366f1;
+  color: #fff;
+}
+
+/* Sections with bg-light override */
+.dark-mode .bg-light {
+  background-color: #121212 !important;
+}
+
+/* Footer */
+.dark-mode footer {
+  background-color: #111;
+  color: #e2e2e2;
+}
+
+/* Scroll Reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Dark mode text-muted override */
+.dark-mode .text-muted {
+  color: #a3a3a3 !important;
+}
+
+/* HERO – Dark Mode fix */
+
+/* Keep hero contents above dark overlay */
+header .container,
+header .img-fluid {
+  position: relative;
+  z-index: 2;
+}
+
+/* Dark mode overlay only behind content */
+.dark-mode header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  border-radius: 0 0 50% 50% / 0 0 10% 10%;
+}
+
+/* HERO text stays readable + bold remains bold */
+.dark-mode header h1,
+.dark-mode header h1 span,
+.dark-mode header p,
+.dark-mode header .lead,
+.dark-mode header .fw-bold {
+  color: var(--dark-text) !important;
+}
+
+/* text-muted fix specifically in hero */
+.dark-mode header .text-muted {
+  color: #c9c9c9 !important;
+}
+
+/* Gradient name stays bright */
+.dark-mode header h1 span {
+  -webkit-background-clip: text;
+  color: transparent !important;
+}
+
+/* HERO Buttons in dark mode */
+.dark-mode header .btn-dark {
+  background: #fff !important;
+  color: #000 !important;
+  border: none;
+}
+
+.dark-mode header .btn-dark:hover {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+
+.dark-mode header .btn-outline-dark {
+  border-color: #ddd !important;
+  color: #ddd !important;
+}
+
+.dark-mode header .btn-outline-dark:hover {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-color: var(--primary) !important;
+}
+
+/* Social icons remain normal color */
+.dark-mode header a.text-dark i {
+  color: #e8e8e8 !important;
+}
+
+.dark-mode header a.text-dark:hover i {
+  color: var(--primary) !important;
+}
+
+/* Profile picture must not darken */
+.dark-mode header .img-fluid {
+  filter: none !important;
+}
